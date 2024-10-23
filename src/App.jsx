@@ -5,7 +5,7 @@ import UserInput from './components/UserInput.jsx';
 import Results from './components/Results.jsx';
 
 function App() {
-  const [UserInput, setUserInput] = useState({
+  const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
     annualInvestment: 1200,
     expectedReturns: 6,
@@ -16,7 +16,7 @@ function App() {
     setUserInput(prevUserInput => {
         return {
             ...prevUserInput,
-            [inputIdentifier]: newValue
+            [inputIdentifier]: newValue,
         };
     });
   }
@@ -24,8 +24,8 @@ function App() {
   return (
     <>
       <Header />
-      <UserInput UserInput={UserInput} onChange={handleChange}/>
-      <Results input={UserInput} />
+      <UserInput userInput={userInput} onChange={handleChange}/>
+      <Results input={userInput} />
     </>
   )
 }
